@@ -1,57 +1,71 @@
-# butter README
+# Butter Extension for VS Code
 
-This is the README for your extension "butter". After writing up a brief description, we recommend including the following sections.
+Butter is a powerful Visual Studio Code extension designed to simplify the creation and management of YAML-based form configurations. It provides intelligent suggestions, customizable snippets, and a live preview feature to streamline your workflow.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **YAML Form Configuration Support**: Provides intelligent autocompletion and snippets for creating YAML-based form configurations.
+- **Customizable Snippets**: Quickly insert predefined field templates such as textboxes, dropdowns, checkboxes, and more.
+- **Field Properties Suggestions**: Context-aware suggestions for field properties like `displayType`, `dataType`, and `required`.
+- **Live Preview**: View a real-time preview of your form configuration in a webview panel.
+- **Trigger-Based Suggestions**: Automatically suggests field properties when typing `:` or working within nested fields.
+- **Field Layout Support**: Includes support for advanced layouts like `section_break`, `tab_break`, `column_break`, and more.
+- **Media Capture Fields**: Easily configure fields for photo and video capture.
+- **Geolocation Support**: Add geolocation fields with latitude and longitude inputs.
+- **Validation and Error Handling**: Highlights invalid YAML configurations in the live preview.
 
-For example if there is an image subfolder under your extension project workspace:
+> Tip: Use the Butter extension to quickly prototype and validate form configurations without leaving your editor.
 
-\!\[feature X\]\(images/feature-x.png\)
+### Screenshots
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+\!\[YAML Autocompletion in Action\]\(images/yaml-autocomplete.png\)
+
+\!\[Live Form Preview\]\(images/form-preview.png\)
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+This extension has no external dependencies. Simply install it from the VS Code Marketplace and start using it right away.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Butter contributes the following settings:
 
-For example:
+- `butter.enable`: Enable or disable the Butter extension.
+- `butter.defaultTemplate`: Set the default file template for new YAML configurations.
+- `butter.snippetPrefix`: Customize the prefix for Butter snippets.
 
-This extension contributes the following settings:
+## Usage
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+1. Open a `.yaml` file in VS Code.
+2. Start typing your form configuration. Use the provided snippets and autocompletions to quickly add fields and properties.
+3. Use the `Butter: Show Preview` command from the Command Palette (`Cmd+Shift+P` on macOS or `Ctrl+Shift+P` on Windows/Linux) to open a live preview of your form.
+4. Modify your YAML configuration and see the changes reflected in real-time in the preview panel.
+
+### Supported Field Types
+
+- **Simple Fields**: `textbox`, `textarea`, `date`, `dropdown`, `checkbox`, `radio`, `file_upload`, `captcha`.
+- **Compound Fields**: `info_pane`, `group`, `card`.
+- **Layout Fields**: `section_break`, `tab_break`, `column_break`.
+- **Media Fields**: `photo_capture`, `video_capture`.
+- **Geolocation Fields**: `geolocation`.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Some features may not work as expected in older versions of VS Code. Please ensure you are using the latest version.
+- If you encounter any issues, feel free to report them on the [GitHub Issues page](https://github.com/your-repo/butter/issues).
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- Initial release of Butter.
+- Added support for YAML autocompletion, customizable snippets, and live form preview.
 
 ---
 
-## Following extension guidelines
+## Following Extension Guidelines
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+Ensure that you've read through the extension guidelines and follow the best practices for creating your extension.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
@@ -63,9 +77,9 @@ You can author your README using Visual Studio Code. Here are some useful editor
 * Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
 * Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
 
-## For more information
+## For More Information
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
+- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**Enjoy coding with Butter!**
