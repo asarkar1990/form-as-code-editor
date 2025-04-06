@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DSL Editor</title>
+    <style>
+        #editor {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="editor"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/loader.js"></script>
+    <script>
+        require.config({ paths: { vs: 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs' } });
+
+        const vscode = acquireVsCodeApi();
+        let editor;
+
+        require(['vs/editor/editor.main'], function () {
+            editor = monaco.editor.create(document.getElementById('editor'), {
+                value: '',
+                language: 'plaintext',
+                theme: 'vs-dark',
+                automaticLayout: true
+            });
+
+            editor.onDidChangeModelContent(() => {
+                vscode.postMessage({
+                    type: 'updateDSL',
+                    dsl: editor.getValue()
+                });
+            });
+        });
+
+        window.addEventListener('message', event => {
+            const message = event.data;
+            switch (message.type) {
+                case 'loadDSL':
+                    if (editor) {
+                        editor.setValue(message.dsl);
+                    }
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>

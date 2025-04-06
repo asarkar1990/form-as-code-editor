@@ -1,0 +1,29 @@
+{
+    "scopeName": "source.lyik",
+    "patterns": [
+        {
+            "match": "\\b(form|fields|name|displayType|dataType|label|required|description|title)\\b:",
+            "name": "keyword.control.lyik"
+        },
+        {
+            "match": "\\b(textbox|section_break|date|dropdown|card|textarea_small|file_upload|photo_capture|geolocation|checkbox|captcha)\\b:",
+            "name": "entity.name.type.lyik"
+        },
+        {
+            "match": "\\b(true|false)\\b",
+            "name": "constant.language.lyik"
+        },
+        {
+            "match": "\".*?\"",
+            "name": "string.quoted.double.lyik"
+        },
+        {
+            "match": "\\b(str|PHONE|datetime\\.date|FILE|list:str)\\b",
+            "name": "support.type.lyik"
+        },
+        {
+            "match": "^\\s*-\\s+",
+            "name": "punctuation.definition.list.lyik"
+        }
+    ]
+}

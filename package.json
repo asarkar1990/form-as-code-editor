@@ -1,0 +1,73 @@
+{
+  "name": "butter",
+  "displayName": "butter",
+  "description": "VS Code extension for LYIK Form DSL",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.2"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:lyik"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "lyik",
+        "extensions": [
+          ".lyik"
+        ],
+        "configuration": "./language-configuration.json",
+        "aliases": [
+          "LYIK FORM"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "lyik",
+        "scopeName": "source.lyik",
+        "path": "src/lyik.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "butter.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "lyik.showPreview",
+        "title": "LYIK: Show Form Preview"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.98.0",
+    "@types/ws": "^8.18.1",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "js-yaml": "^4.1.0",
+    "monaco-editor": "^0.52.2",
+    "ws": "^8.18.1"
+  }
+}

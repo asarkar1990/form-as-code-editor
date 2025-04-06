@@ -1,0 +1,122 @@
+form:
+  name: Customer Registration Form
+  fields:
+    - section_break:
+        name: personal_info
+        displayType: section_break
+        title: Personal Information
+
+    - textbox:
+        name: full_name
+        displayType: textbox
+        dataType: str
+        label: Full Name
+        required: true
+        description: Enter your full name as per official documents
+
+    - textbox:
+        name: phone
+        displayType: textbox
+        dataType: PHONE
+        label: Phone Number
+        required: true
+        description: Enter your contact number
+
+    - date:
+        name: date_of_birth
+        displayType: datebox
+        dataType: datetime.date
+        label: Date of Birth
+        required: true
+
+    - dropdown:
+        name: gender
+        displayType: dropdown
+        dataType: str
+        label: Gender
+        required: true
+
+    - section_break:
+        name: address_section
+        displayType: section_break
+        title: Address Details
+
+    - card:
+        name: address_card
+        displayType: card
+        title: Current Address
+        fields:
+          - textarea_small:
+              name: street_address
+              displayType: textbox.row-4
+              dataType: str
+              label: Street Address
+              required: true
+
+          - textbox:
+              name: city
+              displayType: textbox
+              dataType: str
+              label: City
+              required: true
+
+          - dropdown:
+              name: state
+              displayType: dropdown
+              dataType: str
+              label: State
+              required: true
+
+          - textbox:
+              name: pincode
+              displayType: textbox
+              dataType: str
+              label: PIN Code
+              required: true
+
+    - section_break:
+        name: document_section
+        displayType: section_break
+        title: Document Upload
+
+    - file_upload:
+        name: id_proof
+        displayType: fileoption
+        dataType: FILE
+        label: ID Proof
+        required: true
+        description: Upload any government issued ID proof
+
+    - photo_capture:
+        name: profile_photo
+        displayType: imgcapture
+        dataType: FILE
+        label: Profile Photo
+        required: true
+        description: Take a clear photo of your face
+
+    - section_break:
+        name: verification
+        displayType: section_break
+        title: Verification
+
+    - geolocation:
+        name: current_location
+        displayType: geoloc
+        dataType: str
+        label: Current Location
+        required: true
+
+    - checkbox:
+        name: terms_accepted
+        displayType: checkbox
+        dataType: str
+        label: I accept the terms and conditions
+        required: true
+
+    - captcha:
+        name: verification_captcha
+        displayType: liveness.readout
+        dataType: list:str
+        label: Please complete the verification
+        required: true
