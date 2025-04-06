@@ -18,9 +18,7 @@ Butter is a powerful Visual Studio Code extension designed to simplify the creat
 
 ### Screenshots
 
-\!\[YAML Autocompletion in Action\]\(images/yaml-autocomplete.png\)
-
-\!\[Live Form Preview\]\(images/form-preview.png\)
+\!\[Live Form Preview\]\(images/preview.png\)
 
 ## Requirements
 
